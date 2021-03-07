@@ -1,4 +1,4 @@
-package com.company.productManagement;
+package com.company.data;
 
 public enum Rating {
     NOT_RATED("No Rating"),
@@ -19,6 +19,8 @@ public enum Rating {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return  stars;
+    }
 }
