@@ -93,5 +93,26 @@
 #### instanceof
 
 * returns true or false
+
+### Interfaces
+
+* By default methods in interfaces are marked public and abstract
+* they contain concrete methods ONLY if they are either default, or private, or static
+
+ `private int comparedPeriod(Period p){ return comparePeriod(p) }_`
         
+   * they contain constants, not variables
+   * they solve multiple inheritance problem
    
+* Default methods can only be defined in interfaces
+* A class must override default interface method only if it conflicts with another default method
+* All methods in interfaces are public, while implementing the methods, the methods must be public
+
+##### Functional Interface
+* an interface that defines a single abstract operation (function)
+
+##### Generics
+* It allows variables and methods to operate on objects of various types while providing compile time safety
+* Compiler checks that type assigned, or passed as parameter corresponds to the generic type declaration, rejecting code that attempts to use types that don't match
+* can be used in classes or interfaces
+* type-maker or tag interface: an interface that does not have to define any methods eg cloneable: this interface indicate a permission that an object can be cloned

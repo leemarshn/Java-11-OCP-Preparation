@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Product {
+public abstract class Product implements Rateable<Product>{
     private String id;
     private String name;
     private BigDecimal price;
@@ -48,7 +48,7 @@ public abstract class Product {
         return  price.multiply(DISCOUNT_RATE).setScale(2, RoundingMode.HALF_UP);
     }
 
-    public abstract Product applyRating(Rating newRating);
+//    public abstract Product applyRating(Rating newRating);
 
     @Override
     public String toString() {
