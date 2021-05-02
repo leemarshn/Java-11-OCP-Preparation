@@ -112,7 +112,51 @@
 * an interface that defines a single abstract operation (function)
 
 ##### Generics
+* the order of parameter matters, the class has to come at the beginning
+`public class Cage<E extends Animal & Eat & Run> {
+`
 * It allows variables and methods to operate on objects of various types while providing compile time safety
 * Compiler checks that type assigned, or passed as parameter corresponds to the generic type declaration, rejecting code that attempts to use types that don't match
 * can be used in classes or interfaces
 * type-maker or tag interface: an interface that does not have to define any methods eg cloneable: this interface indicate a permission that an object can be cloned
+
+* no static member can use parameter type e.g. `static T obj`
+* no static method can use a type parameter e.g. `static T getObj(){}`
+* you cannot instantiate an array of type parameter e.g. `vals = new T[];`//	`Gen<Integer>	gens[]	=	new	Gen<Integer>[10];	//	Wrong!
+`
+
+### Collection
+
+* Collections are always of object type. you cannot use primitives
+* set updates values
+* you cannot jump index positions while adding elements
+
+### ArrayList
+`ArrayList(	)`
+`ArrayList(Collection<?	extends	E>	c)`
+`ArrayList(int	capacity)`
+
+##### HashSet
+
+* Load factor - default = 0.75 a measure of how full the has table is allowed to get before its capacity is automatically increased
+`Set <Product> p2 = new HashSet<2, 0.85>()`
+* where 2 is the capacity &0.85 is the load factor
+* add method returns boolean value ... if you try to add to unique elements the second one won't be added
+
+##### Deque
+
+* pollFirst() get element and remove from the deque
+* peekFirst() get first element and not remove it
+* offerLast() add element to the poll
+* peekLast()
+* offerFirst()
+
+You cannot offerFats or Last a null value
+
+##### HasMap
+
+* KeyValue pair
+
+`Product p1 - new Food("Cake);
+Map <Product, Integer> items = new HashMap<>();
+items.put(p1, Integer,valueOf(2))`

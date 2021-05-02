@@ -3,9 +3,11 @@ package app;
 import com.company.data.*;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Locale;
+import java.util.logging.Level;
 
 /**
  * @author LeeN
@@ -21,10 +23,41 @@ public class Shop {
 
     //    Product p8 = new Food();
 
-        Product p1 = pm.createProduct("1012","Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-        pm.printProductReport();
-        p1 = pm.reviewProduct(p1, Rating.FIVE_STAR, "Nice cup of coffee");
-        pm.printProductReport();
+        // pm.createProduct("1012","Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
+        //pm.printProductReport("12");
+//         pm.reviewProduct("1012", Rating.FOUR_STAR, "Nice cup of coffee");
+//         pm.reviewProduct("1012", Rating.ONE_STAR, "Very Bad");
+//         pm.reviewProduct("1012", Rating.FIVE_STAR, "Nice Flower on top");
+//         pm.reviewProduct("1012", Rating.FIVE_STAR, "Lovely");
+
+//        pm.printProductReport("1012");
+
+//        pm.createProduct("1014","Ndengu", BigDecimal.valueOf(0.99), Rating.NOT_RATED);
+//        pm.reviewProduct("1014", Rating.THREE_STAR, "nice taste");
+//        pm.reviewProduct("1014", Rating.ONE_STAR, "Very Bad");
+//        pm.reviewProduct("1014", Rating.FIVE_STAR, "Coriander");
+//        pm.reviewProduct("1014", Rating.ONE_STAR, "bad odour");
+
+      //  pm.printProducts((p0, p7) -> p0.getRating().ordinal()-p7.getRating().ordinal());
+       // pm.printProducts(p -> p.getPrice().floatValue() <2, (p0, p7) -> p0.getPrice().compareTo(p7.getPrice()));
+
+       // pm.printProductReport("1012");
+       // pm.dumpData();
+       //pm.restoreData();
+      // pm.printProductReport("1014");
+        pm.parseProduct("D,1014,Coffee,100,4");
+        //pm.parseReview("1014,4,Nice hot coffee");
+       // pm.reviewProduct("1014", Rating.ONE_STAR, "bad odour");
+       // pm.printProductReport("1014");
+
+//        pm.parseProduct("F,101,Chocolate,1.99,4,2019-09-10");
+//         pm.printProducts(p -> p.getPrice().floatValue() <2, (p0, p7) -> p0.getPrice().compareTo(p7.getPrice()));
+//
+//        pm.printProductReport("101");
+
+
+
+
 //        Product p2 = pm.createProduct("DFSKJ23K", "Coffee", BigDecimal.valueOf(300), Rating.FOUR_STAR);
 //        Product p3 = pm.createProduct("30383088", "Bread", BigDecimal.valueOf(50),Rating.FIVE_STAR, LocalDate.now().plusDays(2));
 //        Product p4 = pm.createProduct("104", "Chocolate", BigDecimal.valueOf(45), Rating.FIVE_STAR);
